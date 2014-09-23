@@ -22,7 +22,7 @@
       lt = $(this).val();
     if ($.isNumeric(lt)) {
       $('#error').addClass("hide");
-      eur = (lt / 3.4528).toFixed(4);
+      eur = (lt / 3.4528).toFixed(2);
       return $('#eur').val(eur);
     } else {
       $('#error').removeClass("hide").addClass("error");
@@ -33,7 +33,7 @@
       eur = $(this).val();
     if ($.isNumeric(eur)) {
       $('#error').addClass("hide");
-      lt = (eur * 3.4528).toFixed(4);
+      lt = (eur * 3.4528).toFixed(2);
       return $('#lt').val(lt);
     } else {
       $('#error').removeClass("hide").addClass("error");

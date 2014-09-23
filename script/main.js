@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  //language
+(function($) {
+  //change language
   $(".english").addClass("hidden");
   $("#lithuanian").addClass("active");
   
@@ -16,7 +16,7 @@ $(document).ready(function () {
     $(".english").removeClass("hidden").addClass("visible");
   });
   
-  //validate
+  //validate 
   $('#lt').keyup(function () {
     var eur,
       lt = $(this).val();
@@ -39,4 +39,5 @@ $(document).ready(function () {
       $('#error').removeClass("hide").addClass("error");
     }
   });
-});
+
+}) (jQuery);

@@ -89,6 +89,7 @@
   font-weight: bold;
   padding: 10px;
   margin: 0 auto;
+  margin-bottom: 1em;
   color: white;
   background-color: red;
 }
@@ -106,6 +107,10 @@
 }
 
 .numbers {   font-size: 10px; }
+
+#countdown {
+  margin: 10px auto;
+}
 
 .countdownHolder{
   padding-top: 10px;
@@ -156,14 +161,6 @@
  * You can use these classes to hide parts
  * of the countdown that you don't need.
  */
-
-.countDays{ /* display:none !important;*/ }
-.countDiv0{ /* display:none !important;*/ }
-.countHours{}
-.countDiv1{}
-.countMinutes{}
-.countDiv2{}
-.countSeconds{}
 
 .countDiv{
 	display:inline-block;

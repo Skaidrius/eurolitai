@@ -30,7 +30,7 @@ $(function(){
 				} else {
 				message += days + " d." + ", ";
 				message += hours + " val." + ", ";
-				message += minutes + " min." + " ir ";
+				message += minutes + " min." + " and ";
 				message += seconds + " sek.";
 				}
 				

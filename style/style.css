@@ -199,6 +199,7 @@
   padding: 0 10px;
   float: left;
   font-size: 0.7em;
+  font: sans-serif;
 }
 .popular ul li{
   list-style: none;

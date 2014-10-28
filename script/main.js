@@ -16,7 +16,7 @@
     $(".english").removeClass("hidden").addClass("visible");
   });
   
-  //validate 
+    //validate 
   $('#lt').keyup(function () {
     var eur,
       lt = $(this).val();
@@ -39,5 +39,15 @@
       $('#error').removeClass("hide").addClass("error");
     }
   });
+  
+  var a = [0.99, 1.99, 2.99, 3.99, 4.99, 9.99, 14.99, 19.99],
+    lteur = $('.lteur'),
+    eurlt = $('.eurlt');
+
+  for (var i = 0, b = a.length; i < b; i++ ) {
+    lteur.append("<li>"+a[i].toString().replace(".", ",") +" Lt = "+(a[i]/ 3.4528).toFixed(2).toString().replace(".", ",") +" Eur"+"</li>");
+    eurlt.append("<li>"+a[i].toString().replace(".", ",") +" Eur = "+(a[i]* 3.4528).toFixed(2).toString().replace(".", ",") +" Lt"+"</li>");
+  }
+
 
 }) (jQuery);

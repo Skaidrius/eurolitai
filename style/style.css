@@ -28,7 +28,10 @@
   border: 3px #000;
 }
 
-.center { text-align: center; }
+.center { 
+  text-align: center; 
+  clear: both;
+}
 
 .box {
   text-align: center;
@@ -185,4 +188,28 @@
 
 .countDiv:after{
 	top:0.9em;
+}
+
+.popular {
+  display: inline-block;
+}
+
+.popular ul {
+  margin-top: 0;
+  padding: 0 10px;
+  float: left;
+  font-size: 0.7em;
+}
+.popular ul li{
+  list-style: none;
+}
+
+hr {
+    /* http://css-tricks.com/examples/hrs/ */
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
 }

@@ -1,68 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Eurolitai by Skaidrius</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Eurolitai</title>
+    <meta name="title" content="Eurolitai">
+    <meta name="description" content="litų į/iš euro konverteris convert LTL to/from EUR">
+    <meta name="viewport" content="width=device-width" scallable="1">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
 
   </head>
-  <body>
-
-      <header>
-        <h1>Eurolitai</h1>
-        <p>LTL - EUR converter (JS JQuery html css), view http://htmlpreview.github.io/?https://github.com/Skaidrius/eurolitai/blob/master/index.html</p>
-      </header>
-
-      <div id="banner">
-        <span id="logo"></span>
-
-        <a href="https://github.com/Skaidrius/eurolitai" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-          <span>Downloads:</span>
-          <ul>
-            <li><a href="https://github.com/Skaidrius/eurolitai/zipball/master" class="button">ZIP</a></li>
-            <li><a href="https://github.com/Skaidrius/eurolitai/tarball/master" class="button">TAR</a></li>
-          </ul>
+  <body class="body">
+    <div>
+      <h1 class="center">Eurolitai</h1>
+        <div class = "languages ">
+          <button id="lithuanian" class="button round">Lt</button>
+          <button id="english" class="button round">En</button>
         </div>
-      </div><!-- end banner -->
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <p>Simple LTL &lt;&gt; EUR converter</p>
-
-<p>Created vs JavaScript/jQuery &amp;html/css</p>
-
-<p>2014</p>
-
-<p>(used  countdown plugin)</p>
-
-<ul>
-<li>
-<a href="https://github.com/author" class="user-mention">@author</a>      Martin Angelov</li>
-<li>
-<a href="https://github.com/version" class="user-mention">@version</a>     1.0</li>
-<li>
-<a href="https://github.com/url" class="user-mention">@url</a>         <a href="http://tutorialzine.com/2011/12/countdown-jquery/">http://tutorialzine.com/2011/12/countdown-jquery/</a>
-</li>
-</ul>
-      </section>
-      <footer>
-        <p>Project maintained by <a href="https://github.com/Skaidrius">Skaidrius</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
+      <h2 class="center"><span class="lithuanian">Konvertuokite litus &#8644; euro<br> </span><span class="english">Easy convert LTL &#8644; EUR</span></h2><br>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    <form class="form center">
+      <div class="box lt round">
+        <input class="input center" type="number" id="lt" name="lt">
+        <label class="money" for="lt">LTL</label>
+      </div>
+      <div>&#61;<div>
+      <div class="box eur round">
+        <input class="input center" type="number" id="eur" name="eur">
+        <label class="money" for="eur">EUR</label>
+      </div>
+      <div></div>
+      <div id="error" class="numbers">
+        <p><span class="lithuanian">Tik skaičiai </span><span class="english"> Only numbers</span></p>
+      </div>
+    </form>
+    <hr>
     
+    <div class="popular">
+      <p><span class="lithuanian">Populiariausia: </span><span class="english"> Popular picks:</span></p>
+      <ul class = "lteur"></ul>
+      <ul class = "eurlt"></ul>
+    </div>
+    <hr>
+
+    <div class = "center">
+      <p><span class="english center">Until Euro in Lithuania </span>
+      <span class="lithuanian center">Liko </span></p>
+    </div>
+		<div id="countdown"></div>
+
+		<p id="note"></p>
+      
+      <div class="left">
+        <span class="lithuanian center">iki euro įvedimo Lietuvoje.</span>
+        <span class="english center">left.</span>
+      </div>
+  <footer class="footer">&copy; All rights reserved</footer>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="script/main.js"></script>
+    <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="script/countdown.js"></script>
   </body>
 </html>

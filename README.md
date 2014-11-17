@@ -1,6 +1,6 @@
 Simple LTL <> EUR converter
 
-http://htmlpreview.github.io/?https://github.com/Skaidrius/eurolitai/blob/master/index.html
+http://skaidrius.github.io/eurolitai/
 
 Created vs JavaScript/jQuery &html/css
 

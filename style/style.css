@@ -97,7 +97,7 @@
   background-color: red;
 }
 
-.hide {  display: none; }
+.hide {  visibility: none; }
 
 .visible {  visibility: visible; }
 

@@ -45,8 +45,8 @@
     eurlt = $('.eurlt');
 
   for (var i = 0, b = a.length; i < b; i++ ) {
-    lteur.append("<li>"+a[i].toString().replace(".", ",") +" Lt = "+(a[i]/ 3.4528).toFixed(2).toString().replace(".", ",") +" Eur"+"</li>");
-    eurlt.append("<li>"+a[i].toString().replace(".", ",") +" Eur = "+(a[i]* 3.4528).toFixed(2).toString().replace(".", ",") +" Lt"+"</li>");
+    lteur.append("<li>"+a[i].toString().replace(".", ",") +" LTL = "+(a[i]/ 3.4528).toFixed(2).toString().replace(".", ",") +" EUR"+"</li>");
+    eurlt.append("<li>"+a[i].toString().replace(".", ",") +" EUR = "+(a[i]* 3.4528).toFixed(2).toString().replace(".", ",") +" LTL"+"</li>");
   }
 
 

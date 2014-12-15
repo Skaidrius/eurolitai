@@ -11,6 +11,7 @@
 
   </head>
   <body class="body">
+    <!--calculate LTL <> Eur-->
     <div>
       <h1 class="center">Eurolitai</h1>
         <div class = "languages ">
@@ -20,20 +21,45 @@
       <h2 class="center"><span class="lithuanian">Konvertuokite litus &#8644; euro<br> </span><span class="english">Easy convert LTL &#8644; EUR</span></h2><br>
     </div>
     <form class="form center">
+      <!--LT box-->
       <div class="box lt round">
         <input class="input center" type="number" id="lt" name="lt">
         <label class="money" for="lt">LTL</label>
       </div>
+     
       <div>&#61;<div>
+      <!--En box-->
       <div class="box eur round">
         <input class="input center" type="number" id="eur" name="eur">
         <label class="money" for="eur">EUR</label>
       </div>
-      <div></div>
-      <div id="error" class="numbers">
+      
+      <div id="error" class="alert">
         <p><span class="lithuanian">Tik skaičiai </span><span class="english"> Only numbers</span></p>
       </div>
     </form>
+    <hr>
+    <!--calculate change-->
+    <div class="change">
+      <div>
+        <form>
+          <button id="showChange" class="button round"><span class="lithuanian">Skaičiuoti grąžą: </span><span class="english"> Calculate change:</span></button>
+        </form>
+        <div id="changeCalculator">
+          <div class="box lt round">
+            <input class="input center" type="number" id="changeLt" name="lt">
+            <label class="money" for="lt">LTL</label>
+          </div>   
+          
+          <div>+</div> 
+          
+          <div class="box eur round">
+            <input class="input center" type="number" id="changeEur" name="eur">
+            <label class="money" for="eur">EUR</label>
+          </div>
+        </div>
+      </div>
+    </div>
     <hr>
     
     <div class="popular">
@@ -42,7 +68,8 @@
       <ul class = "eurlt"></ul>
     </div>
     <hr>
-
+    
+    <!--countdown 'till 2015-01-01-->
     <div class = "center">
       <p><span class="english center">Until Euro in Lithuania </span>
       <span class="lithuanian center">Liko </span></p>

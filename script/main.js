@@ -89,15 +89,16 @@
   // show calculation
   var showNumbers = function(){
     var explain = $('#explain'),
-      ltl = '', 
-      eurs = '', 
-      changeEurs = '', 
-      changeLts = '';
-    ltl = $('#lt').val().toString().replace(".", ",");
-    eurs = $('#eur').val().toString().replace(".", ",");
-    changeEurs = $('#changeEur').val().toString().replace(".", ",");
-    changeLts = $('#changeLt').val().toString().replace(".", ",");
-    var calculationText = "<p>" + ltl +" LTL/ " + eurs + " EUR = " + changeLts +" LTL +" + changeEurs + " EUR" + "</p>";
+        ltl = $('#lt').val().toString().replace(".", ","),
+        eurs = $('#eur').val().toString().replace(".", ","),
+        changeEurs = $('#changeEur').val().toString().replace(".", ","),
+        changeLts = $('#changeLt').val().toString().replace(".", ","),
+        calculationText;
+    if (changeEurs > 0 || changeLts > 0) {
+      calculationText = "<p>" + ltl +" LTL/ " + eurs + " EUR = " + changeLts +" LTL +" + changeEurs + " EUR" + "</p>";
+    } else {
+      calculationText = "<p>" + ltl +" LTL/ " + eurs + " EUR " + "</p>";
+    }
     explain.html(calculationText);
   };
 

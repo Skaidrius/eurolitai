@@ -1,8 +1,11 @@
 (function($) {
-  //change language
+  
+  // initialisation
   $(".english").addClass("hidden");
   $("#lithuanian").addClass("active");
-  
+  $('#changeCalculator').addClass("hidden");
+
+  //change language
   $("#lithuanian").click(function(){
     $(this).addClass("active");
     $("#english").removeClass("active");
@@ -16,38 +19,63 @@
     $(".english").removeClass("hidden").addClass("visible");
   });
   
-    //validate 
+  // show currency change calculator
+  $('#showChange').click(function(){
+    $('#changeCalculator').toggleClass("hidden"); 
+  });
+  
+  // convert currency functions
+  var toEur = function(lt){
+    var eur;
+    eur = (lt / 3.4528).toFixed(2);
+    return eur;
+  };
+  
+  var toLt = function(eur){
+    var lt;
+    lt = (eur * 3.4528).toFixed(2);
+    return lt;
+  };
+  
+  //convert currencies 
   $('#lt').keyup(function () {
-    var eur,
-      lt = $(this).val();
+    var lt = $(this).val(),
+        eur = toEur(lt);
     if ($.isNumeric(lt)) {
       $('#error').addClass("hide");
-      eur = (lt / 3.4528).toFixed(2);
       return $('#eur').val(eur);
     } else {
       $('#error').removeClass("hide").addClass("error");
     }
   });
+  
   $('#eur').keyup(function () {
-    var lt,
-      eur = $(this).val();
+    var eur = $(this).val(),
+        lt = toLt(eur);
     if ($.isNumeric(eur)) {
       $('#error').addClass("hide");
-      lt = (eur * 3.4528).toFixed(2);
       return $('#lt').val(lt);
     } else {
       $('#error').removeClass("hide").addClass("error");
     }
   });
+
+  // currency change calculator
+  $('#changeLt').keyup(function () {
+    var change,
+        lt = $(this).val(),
+        eur = toLt(eur);
+      change =  toEur($('#lt').val() - lt);
+      return $('#changeEur').val(change);
+  });
   
-  var a = [0.99, 1.99, 2.99, 3.99, 4.99, 9.99, 14.99, 19.99, 24.99, 29.99],
-    lteur = $('.lteur'),
-    eurlt = $('.eurlt');
-
-  for (var i = 0, b = a.length; i < b; i++ ) {
-    lteur.append("<li>"+a[i].toString().replace(".", ",") +" Lt = "+(a[i]/ 3.4528).toFixed(2).toString().replace(".", ",") +" Eur"+"</li>");
-    eurlt.append("<li>"+a[i].toString().replace(".", ",") +" Eur = "+(a[i]* 3.4528).toFixed(2).toString().replace(".", ",") +" Lt"+"</li>");
-  }
-
-
+  $('#changeEur').keyup(function () {
+    var change,
+        eur = $(this).val(),
+        lt = toEur(lt);
+      change = toLt($('#eur').val() - eur);
+      return $('#changeLt').val(change);
+  });
+  
+  
 }) (jQuery);

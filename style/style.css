@@ -109,7 +109,7 @@
   top: 20px;
 }
 
-.numbers {   font-size: 10px; }
+.alert {   font-size: 10px; }
 
 #countdown {
   margin: 10px auto;
@@ -213,4 +213,7 @@ hr {
     background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
     background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
     background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+#showChange {
+  margin-bottom: 10px;
 }

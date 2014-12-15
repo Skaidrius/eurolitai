@@ -77,5 +77,13 @@
       return $('#changeLt').val(change);
   });
   
-  
+  var a = [0.99, 1.99, 2.99, 3.99, 4.99, 9.99, 14.99, 19.99, 24.99, 29.99],
+    lteur = $('.lteur'),
+    eurlt = $('.eurlt');
+
+  for (var i = 0, b = a.length; i < b; i++ ) {
+    lteur.append("<li>"+a[i].toString().replace(".", ",") +" LTL = "+(a[i]/ 3.4528).toFixed(2).toString().replace(".", ",") +" EUR"+"</li>");
+    eurlt.append("<li>"+a[i].toString().replace(".", ",") +" EUR = "+(a[i]* 3.4528).toFixed(2).toString().replace(".", ",") +" LTL"+"</li>");
+  }
+
 }) (jQuery);

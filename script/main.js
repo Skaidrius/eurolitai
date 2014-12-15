@@ -3,7 +3,6 @@
   // initialisation
   $(".english").addClass("hidden");
   $("#lithuanian").addClass("active");
-  $('#changeCalculator').addClass("hidden");
 
   //change language
   $("#lithuanian").click(function(){

@@ -41,10 +41,11 @@
     var lt = $(this).val(),
         eur = toEur(lt);
     if ($.isNumeric(lt)) {
-      $('#error').addClass("hide");
-      return $('#eur').val(eur);
+      hideError();
+      $('#eur').val(eur);
+      showNumbers();
     } else {
-      $('#error').removeClass("hide").addClass("error");
+      showError();
     }
   });
   
@@ -52,30 +53,54 @@
     var eur = $(this).val(),
         lt = toLt(eur);
     if ($.isNumeric(eur)) {
-      $('#error').addClass("hide");
-      return $('#lt').val(lt);
+      hideError();
+      $('#lt').val(lt);
+      showNumbers();
     } else {
-      $('#error').removeClass("hide").addClass("error");
+      showError();
     }
   });
+  
+  var hideError = function(){
+    $('#error').addClass("hide");
+    $('#changeLt').val('');
+    $('#changeEur').val('');
+  };
+  var showError = function() {
+    $('#error').removeClass("hide").addClass("error");
+  };
 
   // currency change calculator
   $('#changeLt').keyup(function () {
     var change,
-        lt = $(this).val(),
-        eur = toLt(eur);
+        lt = $(this).val();
       change =  toEur($('#lt').val() - lt);
-      return $('#changeEur').val(change);
+      $('#changeEur').val(change);
+      showNumbers();
   });
   
   $('#changeEur').keyup(function () {
     var change,
-        eur = $(this).val(),
-        lt = toEur(lt);
+        eur = $(this).val();
       change = toLt($('#eur').val() - eur);
-      return $('#changeLt').val(change);
+      $('#changeLt').val(change);
+      showNumbers();
   });
-  
+  // show calculation
+  var showNumbers = function(){
+    var explain = $('#explain'),
+      ltl = '', 
+      eurs = '', 
+      changeEurs = '', 
+      changeLts = '';
+    ltl = $('#lt').val().toString().replace(".", ",");
+    eurs = $('#eur').val().toString().replace(".", ",");
+    changeEurs = $('#changeEur').val().toString().replace(".", ",");
+    changeLts = $('#changeLt').val().toString().replace(".", ",");
+    var calculationText = "<p>" + ltl +" LTL/ " + eurs + " EUR = " + changeLts +" LTL +" + changeEurs + " EUR" + "</p>";
+    explain.html(calculationText);
+  };
+
   var a = [0.99, 1.99, 2.99, 3.99, 4.99, 9.99, 14.99, 19.99, 24.99, 29.99],
     lteur = $('.lteur'),
     eurlt = $('.eurlt');

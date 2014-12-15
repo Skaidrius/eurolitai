@@ -74,18 +74,29 @@
   $('#changeLt').keyup(function () {
     var change,
         lt = $(this).val();
-      change =  toEur($('#lt').val() - lt);
-      $('#changeEur').val(change);
-      showNumbers();
+      if ($.isNumeric(lt)) {
+        hideError();
+        change =  toEur($('#lt').val() - lt);
+        $('#changeEur').val(change);
+        showNumbers();
+      } else {
+      showError();
+    }
   });
   
   $('#changeEur').keyup(function () {
     var change,
         eur = $(this).val();
-      change = toLt($('#eur').val() - eur);
-      $('#changeLt').val(change);
-      showNumbers();
+      if ($.isNumeric(eur)) {
+        hideError();
+        change = toLt($('#eur').val() - eur);
+        $('#changeLt').val(change);
+        showNumbers();
+      } else {
+      showError();
+    }
   });
+  
   // show calculation
   var showNumbers = function(){
     var explain = $('#explain'),

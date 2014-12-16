@@ -105,7 +105,7 @@
   $('#changeLtLt1').keyup(function () {
     clear1();
     var change,
-        lt = $(this).val().toString().replace(".", ",");
+        lt = $(this).val();
       change =  $('#lt').val() - lt;
       $('#changeLtLt2').val(change).toString().replace(".", ",");
       showNumbers();
@@ -114,7 +114,7 @@
   $('#changeLtLt2').keyup(function () {
     clear1();
     var change,
-        lt = $(this).val().toString().replace(".", ",");
+        lt = $(this).val();
       change = $('#lt').val() - lt;
       $('#changeLtLt1').val(change).toString().replace(".", ",");
       showNumbers();
@@ -124,7 +124,7 @@
   $('#changeLt').keyup(function () {
     clear2();
     var change,
-        lt = $(this).val().toString().replace(".", ",");
+        lt = $(this).val();
       change =  toEur($('#lt').val() - lt);
       $('#changeEur').val(change).toString().replace(".", ",");
       showNumbers();
@@ -133,7 +133,7 @@
   $('#changeEur').keyup(function () {
     clear2();
     var change,
-        eur = $(this).val().toString().replace(".", ",");
+        eur = $(this).val();
       change = toLt($('#eur').val() - eur);
       $('#changeLt').val(change).toString().replace(".", ",");
       showNumbers();
@@ -143,7 +143,7 @@
   $('#changeEurEur1').keyup(function () {
     clear3();
     var change,
-        eur = $(this).val().toString().replace(".", ",");
+        eur = $(this).val();
       change = $('#eur').val() - eur;
       $('#changeEurEur2').val(change).toString().replace(".", ",");
       showNumbers();
@@ -152,7 +152,7 @@
   $('#changeEurEur2').keyup(function () {
     clear3();
     var change,
-        eur = $(this).val().toString().replace(".", ",");
+        eur = $(this).val();
       change = $('#eur').val() - eur;
       $('#changeEurEur2').val(change).toString().replace(".", ",");
       showNumbers();

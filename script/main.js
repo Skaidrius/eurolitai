@@ -8,21 +8,24 @@
   $("#lithuanian").click(function(){
     $(this).addClass("active");
     $("#english").removeClass("active");
-    $(".english").removeClass("visible").addClass("hidden").addClass("center");
-    $(".lithuanian").removeClass("hidden").addClass("visible");
+    $(".english").hide();
+    $(".lithuanian").show();
   });
   $("#english").click(function(){
     $(this).addClass("active");
     $("#lithuanian").removeClass("active");
-    $(".lithuanian").removeClass("visible").addClass("hidden");
-    $(".english").removeClass("hidden").addClass("visible");
+    $(".lithuanian").hide();
+    $(".english").show();
   });
+
+  var show = function(){
+    $(this).removeClass("hidden").addClass("visible");
+  };
   
-  // show currency change calculator
-  $('#showChange').click(function(){
-    $('#changeCalculator').toggleClass("hidden"); 
-  });
-  
+  var hide = function(){
+    $(this).removeClass("visible").addClass("hidden");
+  };
+
   // convert currency functions
   var toEur = function(lt){
     var eur;
@@ -42,7 +45,7 @@
         eur = toEur(lt);
     if ($.isNumeric(lt)) {
       hideError();
-      $('#eur').val(eur);
+      $('#eur').val(eur).toString().replace(".", ",");
       showNumbers();
     } else {
       showError();
@@ -54,7 +57,7 @@
         lt = toLt(eur);
     if ($.isNumeric(eur)) {
       hideError();
-      $('#lt').val(lt);
+      $('#lt').val(lt).toString().replace(".", ",");
       showNumbers();
     } else {
       showError();
@@ -62,12 +65,12 @@
   });
   
   var hideError = function(){
-    $('#error').addClass("hide");
+    $('#error').addClass("hidden");
     $('#changeLt').val('');
     $('#changeEur').val('');
   };
   var showError = function() {
-    $('#error').removeClass("hide").addClass("error");
+    $('#error').removeClass("hidden").addClass("error");
   };
 
   // currency change calculator
@@ -75,7 +78,7 @@
     var change,
         lt = $(this).val();
       change =  toEur($('#lt').val() - lt);
-      $('#changeEur').val(change);
+      $('#changeEur').val(change).toString().replace(".", ",");
       showNumbers();
   });
   
@@ -83,10 +86,9 @@
     var change,
         eur = $(this).val();
       change = toLt($('#eur').val() - eur);
-      $('#changeLt').val(change);
+      $('#changeLt').val(change).toString().replace(".", ",");
       showNumbers();
   });
-  
   // show calculation
   var showNumbers = function(){
     var explain = $('#explain'),
@@ -96,9 +98,9 @@
         changeLts = $('#changeLt').val().toString().replace(".", ","),
         calculationText;
     if (changeEurs > 0 || changeLts > 0) {
-      calculationText = "<p>" + ltl +" LTL/ " + eurs + " EUR = " + changeLts +" LTL +" + changeEurs + " EUR" + "</p>";
+      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLts +" LTL + " + changeEurs + " EUR" + "</p>";
     } else {
-      calculationText = "<p>" + ltl +" LTL/ " + eurs + " EUR " + "</p>";
+      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) " + "</p>";
     }
     explain.html(calculationText);
   };

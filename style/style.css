@@ -43,7 +43,7 @@
 
 .input {
   display: inline-block;
-  width: 80%;
+  max-width: 65%;
   padding: 8px 12px;
   margin: 0;
   font-size: 1.3em;
@@ -214,4 +214,27 @@ hr {
 }
 #showChange {
   margin-bottom: 10px;
+}
+
+
+.down {
+  font-size: 10px;
+  padding: 30px 0 10px 0;
+}
+
+.third:first-child{
+  padding-left: 4%;
+}
+.changeCalculator:last-child:after{
+  content: '';
+  display:table;
+  clear: both;
+}
+.third {
+  width: 30%;
+  padding: 0 3px;
+  float: left;
+}
+.explain:before {
+  clear: both;
 }

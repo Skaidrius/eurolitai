@@ -66,39 +66,116 @@
   
   var hideError = function(){
     $('#error').addClass("hidden");
-    $('#changeLt').val('');
-    $('#changeEur').val('');
+    clear();
   };
   var showError = function() {
     $('#error').removeClass("hidden").addClass("error");
   };
+  
+  //clearing functions
+  var clear = function(){
+    $('#changeLtLt1').val('');
+    $('#changeLtLt2').val('');
+    $('#changeLt').val('');
+    $('#changeEur').val('');
+    $('#changeEurEur1').val('');
+    $('#changeEurEur2').val('');
+  };
+  var clear1 = function(){
+    $('#changeLt').val('');
+    $('#changeEur').val('');
+    $('#changeEurEur1').val('');
+    $('#changeEurEur2').val('');
+  };
+  var clear2 = function(){
+    $('#changeLtLt1').val('');
+    $('#changeLtLt2').val('');
+    $('#changeEurEur1').val('');
+    $('#changeEurEur2').val('');
+  };
+  var clear3 = function(){
+    $('#changeLtLt1').val('');
+    $('#changeLtLt2').val('');
+    $('#changeLt').val('');
+    $('#changeEur').val('');
+  };
 
   // currency change calculator
-  $('#changeLt').keyup(function () {
+  // first conversion LTL(EUR)=LTL+LTL
+  $('#changeLtLt1').keyup(function () {
+    clear1();
     var change,
-        lt = $(this).val();
+        lt = $(this).val().toString().replace(".", ",");
+      change =  $('#lt').val() - lt;
+      $('#changeLtLt2').val(change).toString().replace(".", ",");
+      showNumbers();
+  });
+  
+  $('#changeLtLt2').keyup(function () {
+    clear1();
+    var change,
+        lt = $(this).val().toString().replace(".", ",");
+      change = $('#lt').val() - lt;
+      $('#changeLtLt1').val(change).toString().replace(".", ",");
+      showNumbers();
+  });
+  
+  // second conversion LTL(EUR)=LTL+EUR
+  $('#changeLt').keyup(function () {
+    clear2();
+    var change,
+        lt = $(this).val().toString().replace(".", ",");
       change =  toEur($('#lt').val() - lt);
       $('#changeEur').val(change).toString().replace(".", ",");
       showNumbers();
   });
   
   $('#changeEur').keyup(function () {
+    clear2();
     var change,
-        eur = $(this).val();
+        eur = $(this).val().toString().replace(".", ",");
       change = toLt($('#eur').val() - eur);
       $('#changeLt').val(change).toString().replace(".", ",");
       showNumbers();
   });
+  
+  // third conversion LTL(EUR)=EUR+EUR
+  $('#changeEurEur1').keyup(function () {
+    clear3();
+    var change,
+        eur = $(this).val().toString().replace(".", ",");
+      change = $('#eur').val() - eur;
+      $('#changeEurEur2').val(change).toString().replace(".", ",");
+      showNumbers();
+  });
+  
+  $('#changeEurEur2').keyup(function () {
+    clear3();
+    var change,
+        eur = $(this).val().toString().replace(".", ",");
+      change = $('#eur').val() - eur;
+      $('#changeEurEur2').val(change).toString().replace(".", ",");
+      showNumbers();
+  });
+  
   // show calculation
   var showNumbers = function(){
     var explain = $('#explain'),
         ltl = $('#lt').val().toString().replace(".", ","),
         eurs = $('#eur').val().toString().replace(".", ","),
+        changeLtLt1 = $('#changeLtLt1').val().toString().replace(".", ","),
+        changeLtLt2 = $('#changeLtLt2').val().toString().replace(".", ","),
         changeEurs = $('#changeEur').val().toString().replace(".", ","),
         changeLts = $('#changeLt').val().toString().replace(".", ","),
+        changeEurEur1 = $('#changeEurEur1').val().toString().replace(".", ","),
+        changeEurEur2 = $('#changeEurEur2').val().toString().replace(".", ","),
         calculationText;
-    if (changeEurs > 0 || changeLts > 0) {
+    if (changeLtLt1 > 0 || changeLtLt2 > 0) {
+      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLtLt1 +" LTL + " + changeLtLt2 + " LTL" + "</p>";
+    } else if (changeEurs > 0 || changeLts > 0) {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLts +" LTL + " + changeEurs + " EUR" + "</p>";
+    } else if (changeEurEur1 > 0 || changeEurEur2 > 0) {
+      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeEurEur1 +" EUR + " + changeEurEur2 + " EUR" + "</p>";
     } else {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) " + "</p>";
     }

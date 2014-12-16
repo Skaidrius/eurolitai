@@ -215,19 +215,24 @@ hr {
 .third:first-child{
   padding-left: 4%;
 }
-.changeCalculator:last-child:after{
+
+.changeCalculator {
+  width: 100%;
+}
+.changeCalculator:after{
   content: '';
   display:table;
   clear: both;
 }
-.changeCalculator {
-  width: 100%;
-}
+
 .third {
-  width: 30%;
+  width: 30.5%;
   padding: 0 3px;
   float: left;
 }
-.explain:before {
+#explain {
   clear: both;
+}
+hr {
+  margin:10px 0;
 }

@@ -13,16 +13,6 @@
   padding: 10px;
 }
 
-/*footer*/
-.footer {
-  width: 100%;
-  height: 20px;
-  text-align: center;
-  position: absolute;
-  bottom: 0px;
-  font-size: .8em;
-}
-
 .button {   padding: 10px; 
   background: white;
   border: 3px #000;
@@ -225,16 +215,25 @@ hr {
 .third:first-child{
   padding-left: 4%;
 }
-.changeCalculator:last-child:after{
+
+.changeCalculator {
+  width: 100%;
+}
+.changeCalculator:after{
   content: '';
   display:table;
   clear: both;
 }
+
 .third {
-  width: 30%;
+  width: 30.5%;
   padding: 0 3px;
   float: left;
 }
-.explain:before {
+#explain {
   clear: both;
+  padding: 3px 0;
+}
+hr {
+  margin:10px 0;
 }

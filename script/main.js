@@ -8,21 +8,24 @@
   $("#lithuanian").click(function(){
     $(this).addClass("active");
     $("#english").removeClass("active");
-    $(".english").removeClass("visible").addClass("hidden").addClass("center");
-    $(".lithuanian").removeClass("hidden").addClass("visible");
+    $(".english").hide();
+    $(".lithuanian").show();
   });
   $("#english").click(function(){
     $(this).addClass("active");
     $("#lithuanian").removeClass("active");
-    $(".lithuanian").removeClass("visible").addClass("hidden");
-    $(".english").removeClass("hidden").addClass("visible");
+    $(".lithuanian").hide();
+    $(".english").show();
   });
+
+  var show = function(){
+    $(this).removeClass("hidden").addClass("visible");
+  };
   
-  // show currency change calculator
-  $('#showChange').click(function(){
-    $('#changeCalculator').toggleClass("hidden"); 
-  });
-  
+  var hide = function(){
+    $(this).removeClass("visible").addClass("hidden");
+  };
+
   // convert currency functions
   var toEur = function(lt){
     var eur;
@@ -62,12 +65,12 @@
   });
   
   var hideError = function(){
-    $('#error').addClass("hide");
+    $('#error').addClass("hidden");
     $('#changeLt').val('');
     $('#changeEur').val('');
   };
   var showError = function() {
-    $('#error').removeClass("hide").addClass("error");
+    $('#error').removeClass("hidden").addClass("error");
   };
 
   // currency change calculator

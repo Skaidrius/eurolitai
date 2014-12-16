@@ -44,26 +44,47 @@
       <div>
         <p><span class="lithuanian">Skaičiuoti grąžą: </span><span class="english"> Calculate change:</span></p>
         <div id="changeCalculator">
-          <div class="box lt round">
-            <input class="input center" type="number" id="changeLt" name="lt">
-            <label class="money" for="lt">LTL</label>
-          </div>   
-          
-          <div>+</div> 
-          
-          <div class="box eur round">
-            <input class="input center" type="number" id="changeEur" name="eur">
-            <label class="money" for="eur">EUR</label>
+          <div class="third">
+            <div class="box lt round">
+              <input class="input center" type="number" id="changeLtLt1" name="lt">
+              <label class="money" for="lt">LTL</label>
+            </div>   
+            <p>+</p> 
+            <div class="box lt round">
+              <input class="input center" type="number" id="changeLtLt2" name="lt">
+              <label class="money" for="lt">LTL</label>
+            </div>
+          </div>
+          <div class="third">
+            <div class="box lt round">
+              <input class="input center" type="number" id="changeLt" name="lt">
+              <label class="money" for="lt">LTL</label>
+            </div>   
+            <p>+</p> 
+            <div class="box eur round">
+              <input class="input center" type="number" id="changeEur" name="eur">
+              <label class="money" for="eur">EUR</label>
+            </div>
+          </div>
+          <div class="third">
+            <div class="box eur round">
+              <input class="input center" type="number" id="changeEurEur1" name="eur">
+              <label class="money" for="eur">EUR</label>
+            </div>   
+            <p>+</p> 
+            <div class="box eur round">
+              <input class="input center" type="number" id="changeEurEur2" name="eur">
+              <label class="money" for="eur">EUR</label>
+            </div>
           </div>
         </div>
       </div>
-    
-      <!--explain change-->
-      <div id="explain">
-      </div>
     </div>
-    <hr>
-    
+      <!--explain change-->
+    <div>
+      <div id="explain"></div>
+    </div>
+
     <div class="popular">
       <p><span class="lithuanian">Populiariausia: </span><span class="english"> Popular picks:</span></p>
       <ul class = "lteur"></ul>
@@ -89,4 +110,5 @@
     <script type="text/javascript" src="script/script.js"></script>
     <script type="text/javascript" src="script/countdown.js"></script>
   </body>
+  <footer class="down center">Copyright by Skaidrius, 2014 Licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a></footer>
 </html>

@@ -13,16 +13,6 @@
   padding: 10px;
 }
 
-/*footer*/
-.footer {
-  width: 100%;
-  height: 20px;
-  text-align: center;
-  position: absolute;
-  bottom: 0px;
-  font-size: .8em;
-}
-
 .button {   padding: 10px; 
   background: white;
   border: 3px #000;
@@ -229,6 +219,9 @@ hr {
   content: '';
   display:table;
   clear: both;
+}
+.changeCalculator {
+  width: 100%;
 }
 .third {
   width: 30%;

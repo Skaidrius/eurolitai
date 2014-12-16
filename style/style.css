@@ -232,6 +232,7 @@ hr {
 }
 #explain {
   clear: both;
+  padding: 3px 0;
 }
 hr {
   margin:10px 0;

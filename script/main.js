@@ -107,7 +107,7 @@
     var change,
         lt = $(this).val();
       change =  $('#lt').val() - lt;
-      $('#changeLtLt2').val(change).toString().replace(".", ",");
+      $('#changeLtLt2').val(change).toFixed(2).toString().replace(".", ",");
       showNumbers();
   });
   
@@ -116,7 +116,7 @@
     var change,
         lt = $(this).val();
       change = $('#lt').val() - lt;
-      $('#changeLtLt1').val(change).toString().replace(".", ",");
+      $('#changeLtLt1').val(change).toFixed(2).toString().replace(".", ",");
       showNumbers();
   });
   
@@ -126,7 +126,7 @@
     var change,
         lt = $(this).val();
       change =  toEur($('#lt').val() - lt);
-      $('#changeEur').val(change).toString().replace(".", ",");
+      $('#changeEur').val(change).toFixed(2).toString().replace(".", ",");
       showNumbers();
   });
   
@@ -135,7 +135,7 @@
     var change,
         eur = $(this).val();
       change = toLt($('#eur').val() - eur);
-      $('#changeLt').val(change).toString().replace(".", ",");
+      $('#changeLt').val(change).toFixed(2).toString().replace(".", ",");
       showNumbers();
   });
   
@@ -145,7 +145,7 @@
     var change,
         eur = $(this).val();
       change = $('#eur').val() - eur;
-      $('#changeEurEur2').val(change).toString().replace(".", ",");
+      $('#changeEurEur2').val(change).toFixed(2).toString().replace(".", ",");
       showNumbers();
   });
   
@@ -154,7 +154,7 @@
     var change,
         eur = $(this).val();
       change = $('#eur').val() - eur;
-      $('#changeEurEur2').val(change).toString().replace(".", ",");
+      $('#changeEurEur2').val(change).toFixed(2).toString().replace(".", ",");
       showNumbers();
   });
   
@@ -170,11 +170,11 @@
         changeEurEur1 = $('#changeEurEur1').val().toString().replace(".", ","),
         changeEurEur2 = $('#changeEurEur2').val().toString().replace(".", ","),
         calculationText;
-    if (changeLtLt1 > 0 || changeLtLt2 > 0) {
+    if (changeLtLt1 !="" || changeLtLt2 !="") {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLtLt1 +" LTL + " + changeLtLt2 + " LTL" + "</p>";
-    } else if (changeEurs > 0 || changeLts > 0) {
+    } else if (changeEurs !="" || changeLts !="") {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLts +" LTL + " + changeEurs + " EUR" + "</p>";
-    } else if (changeEurEur1 > 0 || changeEurEur2 > 0) {
+    } else if (changeEurEur1 !="" || changeEurEur2 !="") {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeEurEur1 +" EUR + " + changeEurEur2 + " EUR" + "</p>";
     } else {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) " + "</p>";

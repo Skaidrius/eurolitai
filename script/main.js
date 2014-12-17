@@ -161,8 +161,8 @@
   // show calculation
   var showNumbers = function(){
     var explain = $('#explain'),
-        ltl = $('#lt').val().toString().replace(".", ","),
-        eurs = $('#eur').val().toString().replace(".", ","),
+        ltl = $('#lt').val(),
+        eurs = $('#eur').val(),
         changeLtLt1 = $('#changeLtLt1').val(),
         changeLtLt2 = $('#changeLtLt2').val(),
         changeEurs = $('#changeEur').val(),

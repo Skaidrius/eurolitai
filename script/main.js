@@ -170,11 +170,11 @@
         changeEurEur1 = $('#changeEurEur1').val(),
         changeEurEur2 = $('#changeEurEur2').val(),
         calculationText;
-    if (changeLtLt1 !="" || changeLtLt2 !="") {
+    if (changeLtLt1 > 0 || changeLtLt2 > 0) {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLtLt1 +" LTL + " + changeLtLt2 + " LTL" + "</p>";
-    } else if (changeEurs !="" || changeLts !="") {
+    } else if (changeEurs > 0 || changeLts > 0) {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLts +" LTL + " + changeEurs + " EUR" + "</p>";
-    } else if (changeEurEur1 !="" || changeEurEur2 !="") {
+    } else if (changeEurEur1 > 0 || changeEurEur2 > 0) {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeEurEur1 +" EUR + " + changeEurEur2 + " EUR" + "</p>";
     } else {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) " + "</p>";

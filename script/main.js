@@ -163,12 +163,12 @@
     var explain = $('#explain'),
         ltl = $('#lt').val().toString().replace(".", ","),
         eurs = $('#eur').val().toString().replace(".", ","),
-        changeLtLt1 = $('#changeLtLt1').val().toString().replace(".", ","),
-        changeLtLt2 = $('#changeLtLt2').val().toString().replace(".", ","),
-        changeEurs = $('#changeEur').val().toString().replace(".", ","),
-        changeLts = $('#changeLt').val().toString().replace(".", ","),
-        changeEurEur1 = $('#changeEurEur1').val().toString().replace(".", ","),
-        changeEurEur2 = $('#changeEurEur2').val().toString().replace(".", ","),
+        changeLtLt1 = $('#changeLtLt1').val(),
+        changeLtLt2 = $('#changeLtLt2').val(),
+        changeEurs = $('#changeEur').val(),
+        changeLts = $('#changeLt').val(),
+        changeEurEur1 = $('#changeEurEur1').val(),
+        changeEurEur2 = $('#changeEurEur2').val(),
         calculationText;
     if (changeLtLt1 !="" || changeLtLt2 !="") {
       calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLtLt1 +" LTL + " + changeLtLt2 + " LTL" + "</p>";

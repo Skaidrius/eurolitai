@@ -23,13 +23,13 @@ $(function(){
 			
 			var message = "";
 				if ($('#english').hasClass("active")){
-				message += days + " day" + ( days==1 ? '':'s' ) + ", ";
-				message += hours + " hour" + ( hours==1 ? '':'s' ) + ", ";
+				message += days + " day" + ( days==1 ? '':'s' );
+				message += hours + " hour" + ( hours==1 ? '':'s' );
 				message += minutes + " minute" + ( minutes==1 ? '':'s' ) + " and ";
 				message += seconds + " second" + ( seconds==1 ? '':'s' ) ;
 				} else {
-				message += days + " d." + ", ";
-				message += hours + " val." + ", ";
+				message += days + " d.,";
+				message += hours + " val.,";
 				message += minutes + " min." + " ir ";
 				message += seconds + " sek.";
 				}

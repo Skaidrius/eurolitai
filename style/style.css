@@ -178,21 +178,6 @@
 	top:0.9em;
 }
 
-.popular {
-  display: inline-block;
-}
-
-.popular ul {
-  margin-top: 0;
-  padding: 0 10px;
-  float: left;
-  font-size: 0.7em;
-  font: sans-serif;
-}
-.popular ul li{
-  list-style: none;
-}
-
 hr {
     /* http://css-tricks.com/examples/hrs/ */
     border: 0;

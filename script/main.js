@@ -106,18 +106,18 @@
     clear1();
     var change,
         lt = $(this).val();
-      change =  $('#lt').val() - lt;
-      $('#changeLtLt2').val(change).toString().replace(".", ",");
-      showNumbers();
+    change =  ($('#lt').val() - lt).toFixed(2);
+    $('#changeLtLt2').val(change).toString().replace(".", ",");
+    showNumbers();
   });
   
   $('#changeLtLt2').keyup(function () {
     clear1();
     var change,
         lt = $(this).val();
-      change = $('#lt').val() - lt;
-      $('#changeLtLt1').val(change).toString().replace(".", ",");
-      showNumbers();
+    change = ($('#lt').val() - lt).toFixed(2);
+    $('#changeLtLt1').val(change).toString().replace(".", ",");
+    showNumbers();
   });
   
   // second conversion LTL(EUR)=LTL+EUR
@@ -125,18 +125,18 @@
     clear2();
     var change,
         lt = $(this).val();
-      change =  toEur($('#lt').val() - lt);
-      $('#changeEur').val(change).toString().replace(".", ",");
-      showNumbers();
+    change =  (toEur($('#lt').val() - lt)).toFixed(2);
+    $('#changeEur').val(change).toString().replace(".", ",");
+    showNumbers();
   });
   
   $('#changeEur').keyup(function () {
     clear2();
     var change,
         eur = $(this).val();
-      change = toLt($('#eur').val() - eur);
-      $('#changeLt').val(change).toString().replace(".", ",");
-      showNumbers();
+    change = (toLt($('#eur').val() - eur)).toFixed(2);
+    $('#changeLt').val(change).toString().replace(".", ",");
+    showNumbers();
   });
   
   // third conversion LTL(EUR)=EUR+EUR
@@ -144,24 +144,24 @@
     clear3();
     var change,
         eur = $(this).val();
-      change = $('#eur').val() - eur;
-      $('#changeEurEur2').val(change).toString().replace(".", ",");
-      showNumbers();
+    change = ($('#eur').val() - eur).toFixed(2);
+    $('#changeEurEur2').val(change).toString().replace(".", ",");
+    showNumbers();
   });
   
   $('#changeEurEur2').keyup(function () {
     clear3();
     var change,
         eur = $(this).val();
-      change = $('#eur').val() - eur;
-      $('#changeEurEur2').val(change).toString().replace(".", ",");
-      showNumbers();
+    change = ($('#eur').val() - eur).toFixed(2);
+    $('#changeEurEur1').val(change).toString().replace(".", ",");
+    showNumbers();
   });
   
   // show calculation
   var showNumbers = function(){
     var explain = $('#explain'),
-        ltl = $('#lt').val().toString().replace(".", ","),
+        lts = $('#lt').val().toString().replace(".", ","),
         eurs = $('#eur').val().toString().replace(".", ","),
         changeLtLt1 = $('#changeLtLt1').val().toString().replace(".", ","),
         changeLtLt2 = $('#changeLtLt2').val().toString().replace(".", ","),
@@ -170,14 +170,14 @@
         changeEurEur1 = $('#changeEurEur1').val().toString().replace(".", ","),
         changeEurEur2 = $('#changeEurEur2').val().toString().replace(".", ","),
         calculationText;
-    if (changeLtLt1 > 0 || changeLtLt2 > 0) {
-      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLtLt1 +" LTL + " + changeLtLt2 + " LTL" + "</p>";
-    } else if (changeEurs > 0 || changeLts > 0) {
-      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeLts +" LTL + " + changeEurs + " EUR" + "</p>";
-    } else if (changeEurEur1 > 0 || changeEurEur2 > 0) {
-      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) = " + changeEurEur1 +" EUR + " + changeEurEur2 + " EUR" + "</p>";
+    if (changeLtLt1 !=="" && changeLtLt2 !=="") {
+      calculationText = "<p>" + lts +" Lt (" + eurs + " Eur) = " + changeLtLt1 +" Lt + " + changeLtLt2 + " Lt" + "</p>";
+    } else if (changeEurs !=="" && changeLts !=="") {
+      calculationText = "<p>" + lts +" Lt (" + eurs + " Eur) = " + changeLts +" Lt + " + changeEurs + " Eur" + "</p>";
+    } else if (changeEurEur1 !=="" && changeEurEur2!=="" ) {
+      calculationText = "<p>" + lts +" Lt (" + eurs + " Eur) = " + changeEurEur1 +" Eur + " + changeEurEur2 + " Eur" + "</p>";
     } else {
-      calculationText = "<p>" + ltl +" LTL (" + eurs + " EUR) " + "</p>";
+      calculationText = "<p>" + lts +" Lt (" + eurs + " Eur) " + "</p>";
     }
     explain.html(calculationText);
   };
@@ -187,8 +187,8 @@
     eurlt = $('.eurlt');
 
   for (var i = 0, b = a.length; i < b; i++ ) {
-    lteur.append("<li>"+a[i].toString().replace(".", ",") +" LTL = "+(a[i]/ 3.4528).toFixed(2).toString().replace(".", ",") +" EUR"+"</li>");
-    eurlt.append("<li>"+a[i].toString().replace(".", ",") +" EUR = "+(a[i]* 3.4528).toFixed(2).toString().replace(".", ",") +" LTL"+"</li>");
+    lteur.append("<li>"+a[i].toString().replace(".", ",") +" Lt = "+(a[i]/ 3.4528).toFixed(2).toString().replace(".", ",") +" Eur"+"</li>");
+    eurlt.append("<li>"+a[i].toString().replace(".", ",") +" Eur = "+(a[i]* 3.4528).toFixed(2).toString().replace(".", ",") +" Lt"+"</li>");
   }
 
 }) (jQuery);

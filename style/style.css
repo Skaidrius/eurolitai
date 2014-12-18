@@ -54,10 +54,10 @@
 }
 
 .lt {
-  border-top: 5px solid yellow;
-  border-left: 5px solid green;
-  border-right: 5px solid green;
-  border-bottom: 5px solid red;
+  border-top: 5px solid #fdb913;
+  border-left: 5px solid #006a44;
+  border-right: 5px solid #006a44;
+  border-bottom: 5px solid #c1272d;
 }
 
 .eur {
